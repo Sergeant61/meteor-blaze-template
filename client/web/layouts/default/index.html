@@ -1,0 +1,12 @@
+<template name="layoutDefault">
+  <div class="layoutDefault">
+    <nav>
+      {{> Template.dynamic template=nav}}
+    </nav>
+    {{> Template.dynamic template=page}}
+    <footer class="footer">
+      {{> Template.dynamic template=footer}}
+    </footer>
+  </div>
+  {{> Loading}}
+</template>

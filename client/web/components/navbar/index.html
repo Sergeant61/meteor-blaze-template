@@ -1,0 +1,31 @@
+<template name="componentNavbar">
+
+  <div class="componentNavbar">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+      <a class="navbar-brand" href="/home">
+        <img src="/assets/images/meteor-logo.svg" alt="Meteor logo" />
+      </a>
+
+      <button class="navbar-toggler p-0 border-0" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link {{isActive 'home' 'active'}}" href="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{isActive 'products' 'active'}}" href="/products">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{isActive 'contact' 'active'}}" href="/contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{isActive 'about' 'active'}}" href="/about">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</template>
