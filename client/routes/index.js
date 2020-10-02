@@ -4,6 +4,7 @@ import { FlowRouterMeta, FlowRouterTitle } from 'meteor/ostrio:flow-router-meta'
 FlowRouter.route('/home', {
   name: 'home',
   action: function (params, queryParams) {
+    Meteor.subscribe('person-all');
     this.render('layoutDefault', 'pageHome', { nav: 'componentNavbar', page: 'pageHome', footer: 'componentFooter' });
   }
 });
