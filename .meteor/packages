@@ -35,3 +35,6 @@ mdg:validated-method
 tunifight:loggedin-mixin
 universe:i18n
 reactive-dict
+zigo:api
+zigo:ui
+meteorhacks:picker

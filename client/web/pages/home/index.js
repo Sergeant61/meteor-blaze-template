@@ -1,6 +1,6 @@
 import { Template } from 'meteor/templating';
 import './index.html';
-import Person from '/imports/collections/person.js';
+import Person from '/imports/collections/Person.js';
 import Swal from 'sweetalert2';
 
 Template.pageHome.onCreated(function () {

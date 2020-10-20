@@ -3,8 +3,12 @@
     <nav>
       {{> Template.dynamic template=nav}}
     </nav>
-    {{> Template.dynamic template=page}}
-    <footer class="footer">
+
+    <div class="content">
+      {{> Template.dynamic template=page}}
+    </div>
+
+    <footer>
       {{> Template.dynamic template=footer}}
     </footer>
   </div>

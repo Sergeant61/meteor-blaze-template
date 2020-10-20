@@ -1,9 +1,9 @@
 <template name="componentNavbar">
 
   <div class="componentNavbar">
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
-      <a class="navbar-brand" href="/home">
-        <img src="/assets/images/meteor-logo.svg" alt="Meteor logo" />
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary shadow">
+      <a class="navbar-brand" href="/">
+        <img src="/assets/images/logo.svg" alt="Meteor logo" />
       </a>
 
       <button class="navbar-toggler p-0 border-0" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,17 +13,34 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link {{isActive 'home' 'active'}}" href="/home">Home</a>
+            <a class="nav-link {{isActive 'home' 'active'}}" href="/">{{_ 'componentNavbar.home'}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{isActive 'products' 'active'}}" href="/products">Products</a>
+            <a class="nav-link {{isActive 'products' 'active'}}" href="/products">{{_ 'componentNavbar.products'}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{isActive 'contact' 'active'}}" href="/contact">Contact</a>
+            <a class="nav-link {{isActive 'contact' 'active'}}" href="/contact">{{_ 'componentNavbar.contact'}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {{isActive 'about' 'active'}}" href="/about">About</a>
+            <a class="nav-link {{isActive 'settings' 'active'}}" href="/settings/users">{{_ 'componentNavbar.settings'}}</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link {{isActive 'about' 'active'}}" href="/about">{{_ 'componentNavbar.about'}}</a>
+          </li>
+          {{#if currentUser}}
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="#" id="brdProfileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user-circle fa-lg"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right pl-3" aria-labelledby="brdProfileDropdown">
+                <a class="nav-link text-dark" href="/my-account">{{_ 'componentNavbar.myAccount'}}</a>
+                <a class="nav-link text-dark logout" href="#">{{_ 'componentNavbar.exit'}}</a>
+              </div>
+            </li>
+          {{/if}}
+
+          {{> componentI18nSelector}}
+
         </ul>
       </div>
     </nav>

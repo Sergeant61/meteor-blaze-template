@@ -1,0 +1,16 @@
+{
+  "debug": false,
+  "nodePath": "",
+  "docsPath": "~/myproject-docs",
+  "meteorPort": 3333,
+  "initMeteor": true,
+  "updateMeteor": true,
+  "preamble": true,
+  "projectRepo": "https://github.com/username/myproject/tree/master",
+  "docsConfig": {
+    "title": "Meteor Project Docs",
+    "metas": {
+      "description": "Documentation for a meteor project."
+    }
+  }
+}

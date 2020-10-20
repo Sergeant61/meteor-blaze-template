@@ -1,0 +1,43 @@
+<template name="pageSignin">
+  <div class="pageSignin container-fluid">
+    <div class="row no-gutter">
+      <div class="d-none d-md-flex col-md-6 col-xl-8 vh-100 brd-bg-image"></div>
+      <div class="col-md-6 col-xl-4 bg-dark">
+        <div class="vh-100 d-flex align-items-center py-5">
+          <form class="form-signin">
+            <div class="px-xl-5 mx-xl-5">
+              <div class="row mt-3">
+                <div class="col-12 text-center mb-4">
+                  <img src="/assets/images/logo.svg" alt="">
+                </div>
+
+                <div class="col-12 text-center mb-4 text-white">
+                  <h4>Hoşgeldiniz</h4>
+                </div>
+
+                <div class="col-12">
+                  <fieldset class="form-group omni-commerce-ui-form-group">
+                    <input type="text" class="form-control" id="emailAddress" required autofocus value="{{meteorSettings.public.dummy.username}}">
+                    <label for="emailAddress">İsim</label>
+                  </fieldset>
+                </div>
+
+                <div class="col-12">
+                  <fieldset class="form-group omni-commerce-ui-form-group">
+                    <input type="password" class="form-control" id="password" required value="{{meteorSettings.public.dummy.password}}">
+                    <label for="password">Şifre</label>
+                  </fieldset>
+                </div>
+
+                <div class="col-md-12">
+                  <button class="btn btn-lg btn-warning btn-block text-white" type="submit">Giriş Yap</button>
+                  <a href="/auth/signup" class="btn btn-lg btn-secondary btn-block">Kayıt Ol</a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

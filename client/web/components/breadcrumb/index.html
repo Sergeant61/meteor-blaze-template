@@ -1,0 +1,17 @@
+<template name="componentBreadcrumb">
+  {{#with breadcrumbUtil.pages.get}}
+    <div class="componentBreadcrumb">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb m-2 p-2 bg-white">
+          {{#each this}}
+            {{#if isLastItem @index}}
+              <li class="breadcrumb-item active" aria-current="page">{{title}}</li>
+            {{else}}
+              <li class="breadcrumb-item"><a href="{{url}}">{{title}}</a></li>
+            {{/if}}
+          {{/each}}
+        </ol>
+      </nav>
+    </div>
+  {{/with}}
+</template>

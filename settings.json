@@ -1,0 +1,7 @@
+{
+  "public": {
+    "zigoApi": {
+      "baseUrl": "http://localhost:3010"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+
+
+.omni-commerce-ui-form-group {
+  position: relative;
+
+  .form-control {
+    min-height: 50px;
+  }
+
+  .omni-commerce-ui-input-error {
+    border-color: var(--danger);
+
+    &+label {
+      color: var(--danger);
+
+      &:after {
+        content: attr(data-content);
+      }
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 0;
+    padding: 15px 0 0 12px;
+    transition: all 200ms;
+    color: var(--grey);
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .form-control:focus+label, .form-control:valid+label {
+    font-size: 8px;
+    line-height: 11px;
+    transform: translate3d(0, -45%, 0);
+    opacity: 1;
+  }
+
+  .form-control {
+    -webkit-appearance: none;
+  }
+}

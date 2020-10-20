@@ -1,7 +1,8 @@
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 import { FlowRouterMeta, FlowRouterTitle } from 'meteor/ostrio:flow-router-meta';
 
-FlowRouter.route('/home', {
+FlowRouter.route('/', {
+  triggersEnter: [MustSignIn],
   name: 'home',
   action: function (params, queryParams) {
     Meteor.subscribe('person-all');
@@ -10,6 +11,7 @@ FlowRouter.route('/home', {
 });
 
 FlowRouter.route('/products', {
+  triggersEnter: [MustSignIn],
   name: 'products',
   action: function (params, queryParams) {
     this.render('layoutDefault', 'pageProducts', { nav: 'componentNavbar', page: 'pageProducts', footer: 'componentFooter' });
@@ -17,6 +19,7 @@ FlowRouter.route('/products', {
 });
 
 FlowRouter.route('/contact', {
+  triggersEnter: [MustSignIn],
   name: 'contact',
   action: function (params, queryParams) {
     this.render('layoutDefault', 'pageContact', { nav: 'componentNavbar', page: 'pageContact', footer: 'componentFooter' });
@@ -24,6 +27,7 @@ FlowRouter.route('/contact', {
 });
 
 FlowRouter.route('/about', {
+  triggersEnter: [MustSignIn],
   name: 'about',
   action: function (params, queryParams) {
     this.render('layoutDefault', 'pageAbout', { nav: 'componentNavbar', page: 'pageAbout', footer: 'componentFooter' });

@@ -1,9 +1,9 @@
-Template.webComponentPagination.onCreated(function () {
+Template.componentPagination.onCreated(function () {
   this.data.pages = new ReactiveVar([]);
   this.data.refreshToken = new ReactiveVar();
 });
 
-Template.webComponentPagination.onRendered(function () {
+Template.componentPagination.onRendered(function () {
   const self = this;
 
   this.autorun(function () {
@@ -41,7 +41,7 @@ Template.webComponentPagination.onRendered(function () {
 });
 
 
-Template.webComponentPagination.events({
+Template.componentPagination.events({
   'click .brd-previous': function (event, template) {
     event.preventDefault();
     let currentPage = template.data.currentPage.get();

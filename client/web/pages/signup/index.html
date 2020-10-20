@@ -1,0 +1,64 @@
+<template name="pageSignup">
+  <div class="pageSignup container-fluid">
+    <div class="row no-gutter">
+      <div class="d-none d-md-flex col-md-8 vh-100 brd-bg-image"></div>
+      <div class="col-md-4 bg-dark">
+        <div class="vh-100 d-flex align-items-center py-5">
+          <form class="form-signin">
+            <div class="px-5 mx-5">
+              <div class="row mt-3">
+                <div class="col-12 text-center mb-4">
+                  <img src="/assets/images/logo.svg" alt="">
+                </div>
+
+                <div class="col-12 text-center mb-4 text-white">
+                  <h4>Hoşgeldiniz</h4>
+                </div>
+
+                <div class="col-12">
+                  <fieldset class="form-group omni-commerce-ui-form-group">
+                    <input type="text" class="form-control" id="first_name" required>
+                    <label for="first_name">İsim</label>
+                  </fieldset>
+                </div>
+
+                <div class="col-12">
+                  <fieldset class="form-group omni-commerce-ui-form-group">
+                    <input type="text" class="form-control" id="last_name" required>
+                    <label for="last_name">Soyisim</label>
+                  </fieldset>
+                </div>
+
+                <div class="col-12">
+                  <fieldset class="form-group omni-commerce-ui-form-group">
+                    <input type="text" class="form-control" id="username" required>
+                    <label for="username">Kullanıcı Adı</label>
+                  </fieldset>
+                </div>
+
+                <div class="col-12">
+                  <fieldset class="form-group omni-commerce-ui-form-group">
+                    <input type="email" class="form-control" id="email" required>
+                    <label for="email">E-posta Adresi</label>
+                  </fieldset>
+                </div>
+
+                <div class="col-12">
+                  <fieldset class="form-group omni-commerce-ui-form-group">
+                    <input type="password" class="form-control" id="password" required>
+                    <label for="password">Şifre</label>
+                  </fieldset>
+                </div>
+
+                <div class="col-md-12">
+                  <button class="btn btn-lg btn-warning btn-block text-white" type="submit">Kayıt ol</button>
+                  <a href="/auth/signin" class="btn btn-lg btn-secondary btn-block">Giriş Yap</a>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

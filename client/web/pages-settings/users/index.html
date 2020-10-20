@@ -1,0 +1,55 @@
+<template name="pageSettingsUsers">
+  <div class="pageSettingsUsers">
+    <div class="d-flex justify-content-center align-self-center">
+      <!-- <h1>Hello Settings User</h1> -->
+
+      {{#with list}}
+
+        <div class="tree {{options.class}}">
+
+          <ul>
+            {{#with parents}}
+              {{#each this}}
+                <li>
+                  <span class="{{spanClass}}"><i class="fas fa-minus-circle"></i> </span> <a href="{{#if href}}{{href}}{{else}}#{{/if}}" class="{{#unless href}}brd-tree-click{{/unless}} {{textClass}}">{{title}}</a>
+                  <ul>
+                    {{#with child}}
+                      {{#each this}}
+
+                        <li>
+                          <span class="{{spanClass}}"><i class="fas fa-minus-circle"></i> </span> <a href="{{#if href}}{{href}}{{else}}#{{/if}}" class="{{#unless href}}brd-tree-click{{/unless}} {{textClass}}">{{title}}</a>
+                          <ul>
+                            {{#with grandChild}}
+                              {{#each this}}
+
+                                <li>
+                                  <span class="{{spanClass}}"><i class="fas fa-minus-circle"></i> </span> <a href="{{#if href}}{{href}}{{else}}#{{/if}}" class="{{#unless href}}brd-tree-click{{/unless}} {{textClass}}">{{title}}</a>
+                                  <ul>
+                                    {{#with greatGrandChild}}
+                                      {{#each this}}
+                                        <li>
+                                          <span class="{{spanClass}}"><i class="fas fa-minus-circle"></i> </span> <a href="{{#if href}}{{href}}{{else}}#{{/if}}" class="{{#unless href}}brd-tree-click{{/unless}} {{textClass}}">{{title}}</a>
+                                        </li>
+                                      {{/each}}
+                                    {{/with}}
+                                  </ul>
+                                </li>
+                              {{/each}}
+                            {{/with}}
+
+                          </ul>
+                        </li>
+                      {{/each}}
+                    {{/with}}
+
+                  </ul>
+                </li>
+              {{/each}}
+            {{/with}}
+          </ul>
+        </div>
+      {{/with}}
+    </div>
+  </div>
+
+</template>

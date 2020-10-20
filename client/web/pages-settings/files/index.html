@@ -1,0 +1,129 @@
+<template name="pageSettingsFiles">
+  <div class="pageSettingsFiles">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="card shadow border-0 my-4" style="border-radius: 16px;">
+            <div class="card-body">
+              <div class="d-flex">
+                <div class="align-self-center">
+                  <h4 class="mb-0">Dosyalar</h4>
+                </div>
+
+                <div class="align-self-center ml-auto">
+
+                  <form id="brdImageInsert" class="form-inline">
+                    <div class="d-flex">
+                      <div class="form-group">
+                        <input type="file" class="form-control-file form-control" id="brdFile">
+                      </div>
+
+                      <div class="align-self-center ml-auto">
+                        <button type="submit" class="btn btn-primary">Kaydet</button>
+                      </div>
+                    </div>
+                  </form>
+
+
+                  <!-- <a href="/settings/file-insert" class="btn btn-warning text-white"><i class="fas fa-plus"></i> Dosya Ekle</a> -->
+                </div>
+
+                <div class="align-self-center ml-3">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="fas fa-search"></i></span>
+                    </div>
+                    <input type="text" class="form-control" id="brdKeyword" placeholder="Dosya Ara">
+                  </div>
+                </div>
+              </div>
+              <hr>
+
+              {{#with files.get}}
+                <table class="table table-sm table-bordered">
+                  <thead class="bg-primary text-white">
+                    <tr>
+                      <th scope="col" class="text-center">Id</th>
+                      <th scope="col" class="text-center">Resim</th>
+                      <th scope="col" class="text-center">İsim</th>
+                      <th scope="col" class="text-center">İşlemler</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{#each this}}
+                      <tr>
+                        <td scope="row" class="text-center align-middle">{{_id}}</td>
+                        <td scope="row" class="text-center align-middle">
+
+
+                          <img class="img-fluid" onerror="this.src='/assets/images/no-image.png'" src="{{generateFileUrl _id}}" width="65px">
+
+                        </td>
+                        <td scope="row" class="text-center align-middle">{{originalname}}</td>
+                        <td scope="row" class="text-center align-middle">
+                          <div class="btn-group">
+                            <a href="#" class="btn btn-sm btn-danger brd-delete">Sil</a>
+                            <a href="#" class="btn btn-sm btn-info text-white brd-detail">Detay</a>
+                          </div>
+                        </td>
+                      </tr>
+                    {{/each}}
+                  </tbody>
+                </table>
+              {{/with}}
+
+              {{#if notFound.get}}
+                <div class="row">
+                  <div class="col-12 text-center pt-5 px-5">
+                    <h4 class="font-weight-bold">Kayıtlı Dosya Bulunmamakta</h4>
+                    <p class="text-muted">---</p>
+                    <a href="/settings/roles-insert" class="btn btn-warning text-white">Dosya Ekle</a>
+                  </div>
+                </div>
+              {{/if}}
+
+              {{#with files.get}}
+                <div class="d-flex justify-content-center">
+                  {{> componentPagination currentPage=../currentPage totalCount=../totalDocs pageItems=../pageItems isSmall=true}}
+                </div>
+              {{/with}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="brdFileDetailModal" tabindex="-1" role="dialog">
+      {{#with file.get}}
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">{{_id}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+
+              <div class="col-md-12">
+                <ul class="list-group">
+                  {{#each toArray this}}
+                    <li class="list-group-item d-flex">
+                      <span class="flex-grow-1">{{id}}</span>
+                      <!-- {{#each privileges}} -->
+                      <div class="form-check ml-3">
+                        <span class="badge badge-primary">{{label}}</span>
+                      </div>
+                      <!-- {{/each}} -->
+                    </li>
+                  {{/each}}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{/with}}
+    </div>
+  </div>
+</template>

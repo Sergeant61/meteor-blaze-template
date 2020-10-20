@@ -1,7 +1,48 @@
-<template name="componentFooter">
-  <div class="componentFooter">
+<template name="componentFooter"> 
+  <div class="componentFooter py-4 border-top bg-white">
     <div class="container">
-      <span class="text-muted">Place sticky footer content here.</span>
+      <div class="row">
+        <div class="col-md-4 col-lg-3">
+          <img class="mb-2" src="/assets/images/logo.png" alt="" height="24">
+          <small class="d-block mb-3 text-muted">&copy; 2019-2020</small>
+
+          <a href="https://www.facebook.com/spermatorial/"><i class="fab fa-facebook"></i></a>
+          <!-- <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a> -->
+          <a href="https://www.linkedin.com/company/spermatorial/"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+        <div class="col-md-2">
+          <h5>{{_ 'componentFooter.about'}}</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted brd-home-link" href="/">{{_ 'componentFooter.home'}}</a></li>
+            <li><a class="text-muted brd-how-its-works" href="/#">{{_ 'componentFooter.howItWorks'}}</a></li>
+            <li><a class="text-muted" href="/about">{{_ 'componentFooter.about'}}</a></li>
+            <li><a class="text-muted brd-contact-us" href="/#">{{_ 'componentFooter.contactUs'}}</a></li>
+            {{#unless currentUser}}
+            <li><a class="text-muted" href="/signin">{{_ 'componentFooter.signIn'}}</a></li>
+            {{/unless}}
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <h5>{{_ 'componentFooter.legal'}}</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="/privacy-policy">{{_ 'componentFooter.privacyPolicy'}}</a></li>
+            <li><a class="text-muted" href="/terms-of-use">{{_ 'componentFooter.termsofService'}}</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 col-lg-5">
+          <form class="brd-subscribe-form">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="{{_ 'componentFooter.subscribeOurNewsletter'}}" id="emailAddress" aria-describedby="button-addon2" required>
+              <div class="input-group-append">
+                <button class="btn btn-secondary" type="submit" id="button-addon2">{{_ 'componentFooter.subscribe'}}</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </template>

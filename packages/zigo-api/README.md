@@ -1,0 +1,9 @@
+```
+{
+  "public": {
+    "omniCommerce": {
+      "baseUrl": ""
+    }
+  }
+}
+```
